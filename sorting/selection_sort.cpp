@@ -1,10 +1,9 @@
+#include "../utils/vector_helper.h"
 #include <iostream>
 #include <sstream>
 #include <vector>
 
 using namespace std;
-
-template <typename T> string vectorToString(vector<T> &list);
 
 template <typename T> void vectorSort(vector<T> &list) {
   int nums = list.size();
@@ -32,16 +31,4 @@ int main() {
 
   cout << "排序后：" << vectorToString(list_int) << "\n\n";
   return 0;
-}
-
-template <typename T> string vectorToString(vector<T> &list) {
-  ostringstream s;
-  for (const auto &v : list) {
-    if (v != list[0]) {
-      s << ", ";
-    }
-    s << v;
-  }
-  string rst = "[" + s.str() + "]";
-  return rst;
 }
